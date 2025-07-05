@@ -1,0 +1,251 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.texture-bg {
+  background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Logo and Name */
+.logo {
+  margin-bottom: 40px;
+  color: white;
+  animation: fadeInDown 1s ease-out;
+}
+.logo .icon {
+  font-size: 3rem;
+}
+.logo h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+/* Buttons */
+.menu-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu-buttons button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgb(11, 10, 10);
+  cursor: pointer;
+  background: linear-gradient(45deg, #dcd6d8, #a1a0a0);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.4s;
+  min-width: 140px;
+  box-shadow: 0 4px 20px rgba(95, 94, 94, 0.4);
+}
+
+.menu-buttons button:hover {
+  transform: scale(1.08);
+  background: linear-gradient(45deg, #726f6e, #dfdcdd);
+  box-shadow: 0 8px 30px rgba(99, 98, 97, 0.6);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .logo h1 {
+    font-size: 2rem;
+  }
+  .menu-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-wrapper img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 75, 43, 0.5);
+}
+
+
+/* Individual Button Entrance Animations */
+.btn1 {
+  animation: fromTopLeft 1s ease-out forwards;
+}
+.btn2 {
+  animation: fromTopRight 1.2s ease-out forwards;
+}
+.btn3 {
+  animation: fromBottomLeft 1.4s ease-out forwards;
+}
+.btn4 {
+  animation: fromBottomRight 1.6s ease-out forwards;
+}
+.btn5 {
+  animation: fromTopCenter 1.8s ease-out forwards;
+}
+.btn6 {
+  animation: fromBottomCenter 2s ease-out forwards;
+}
+
+@keyframes fromTopLeft {
+  from {
+    opacity: 0;
+    transform: translate(-200px, -200px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fromTopRight {
+  from {
+    opacity: 0;
+    transform: translate(200px, -200px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fromBottomLeft {
+  from {
+    opacity: 0;
+    transform: translate(-200px, 200px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fromBottomRight {
+  from {
+    opacity: 0;
+    transform: translate(200px, 200px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fromTopCenter {
+  from {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fromBottomCenter {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.site-footer {
+  margin-top: 60px;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(2px);
+  text-align: center;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.site-footer .quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ff7e5f;
+  margin-bottom: 10px;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.site-footer .quote:hover {
+  color: #ff4b2b;
+  text-shadow: 0 0 10px rgba(255, 75, 43, 0.4);
+}
+
+.site-footer .copyright {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+  .site-footer .quote {
+    font-size: 1rem;
+  }
+
+  .site-footer .copyright {
+    font-size: 0.8rem;
+  }
+}
